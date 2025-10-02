@@ -20,15 +20,14 @@ export const Q_STEP_COST = getSessionStorageParam<number>('Q_STEP_COST', -1);
 export const HUM_INT_FB = getSessionStorageParam<number>('HUM_INT_FB', -12);
 export const PELLET_FEEDBACK = getSessionStorageParam<number>('PELLET_FEEDBACK', 6);
 export const INTERPRET_TYPE = (() => {
-    const username = Number(sessionStorage.getItem("userID")); // Convert username to an integer
-    if (isNaN(username)) {
-        console.error("Invalid username. Cannot determine INTERPRET_TYPE.");
-        return 0; // Default to 0 if username is invalid
+    let username = Number(sessionStorage.getItem("userID")); // Convert username to an integer
+    if (username===0) {
+        return 3; // change to whatever interpretation type you want.
     }
-
-    const candidates = [0, 1, 2, 3, 4, 5]; // Candidate values for INTERPRET_TYPE
-    const index = (username - 1) % candidates.length; // Determine the index in the candidates array
-    return candidates[index];
+    // const candidates = [0, 1, 2, 3, 4, 5]; // Candidate values for INTERPRET_TYPE
+    // const index = (username - 1) % candidates.length; // Determine the index in the candidates array
+    // return candidates[index];
+    return -1;
 })();
 
 export const PELLET_TILES = getSessionStorageParam<number[][]>(

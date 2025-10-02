@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useSelector } from "react-redux";
-import { IGlobalState } from "../utils";
+import { IGlobalState, INTERPRET_TYPE } from "../utils";
 
  interface ScoreBoxType  {
     myId: string
@@ -17,7 +17,7 @@ const AgentScoreBox: FC<ScoreBoxType> = ({ myId }): JSX.Element => {
     const pos = useSelector((state: IGlobalState) => state.agent_pos);
 
     // Construct a string to display the agent's score and position
-    const strToWrite = 'Agent ' + agentId + ' has ' + scores[agentId] + ' points. It is in position x: ' + pos[agentId].x + ' and y: ' + pos[agentId].y;
+    const strToWrite = 'Agent ' + agentId + ' has ' + scores[agentId] + ' points. Its interpretation type is ' + INTERPRET_TYPE;
 
     // Render the component
     return (

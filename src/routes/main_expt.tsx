@@ -90,5 +90,5 @@ function MainExperimentWithRedux() {
                 </Fragment>
             ))}
         </Fragment>
-    );
+        );
 }
