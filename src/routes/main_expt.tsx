@@ -87,6 +87,7 @@ function MainExperimentWithRedux() {
                 <Fragment key={i}>
                     <AgentScoreBox myId={i.toString()} />
                     <NumMovesBox myId={i.toString()} />
+                    <ExportButton />
                 </Fragment>
             ))}
         </Fragment>

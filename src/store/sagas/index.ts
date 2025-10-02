@@ -225,13 +225,13 @@ function * handleSelfMoveSaga(fnArgs : Action):any{
     });
 
     // This section is commented out but can be enabled to simulate actions and send Q-results
-    // if ('selfMove' in raceResult) {
-    //     const newQResult:IQvalue = (agentInsts[myAgentId] as QLearnAgent).simulateActions();
-    //     yield put (sendsimulations(newQResult));
-    // } else if ('cancelMove' in raceResult) {
-    //     const newQResult:IQvalue = (agentInsts[myAgentId] as QLearnAgent).simulateActions();
-    //     yield put (sendsimulations(newQResult));
-    // }
+    if ('selfMove' in raceResult) {
+        const newQResult:IQvalue = (agentInsts[myAgentId] as QLearnAgent).simulateActions();
+        yield put (sendsimulations(newQResult));
+    } else if ('cancelMove' in raceResult) {
+        const newQResult:IQvalue = (agentInsts[myAgentId] as QLearnAgent).simulateActions();
+        yield put (sendsimulations(newQResult));
+    }
 
     yield call(endSelfMoveSaga, [args]); // Call the end self-move saga
 }

@@ -48,21 +48,21 @@ const ExportButton = () => {
   // @ts-ignore
   const QTable = (agentInsts[0])._myQTable; // Access the Q-table policy of the first agent
   // @ts-ignore
-  const numMoves0 = useNumTrajData(0); // Get the number of moves using the custom hook
+  // const numMoves0 = useNumTrajData(0); // Get the number of moves using the custom hook
   // @ts-ignore
-  const numMoves1 = useNumTrajData(1); // Get the number of moves using the custom hook
+  // const numMoves1 = useNumTrajData(1); // Get the number of moves using the custom hook
 
   const hasDownloaded = React.useRef(false);
   
   // useEffect hook to trigger the download and reload the page when the number of moves reaches 600
-  useEffect(() => {
-    const minMoves = Math.min(numMoves0, numMoves1);
-    if (minMoves === 1001 && !hasDownloaded.current) {
-      hasDownloaded.current = true;
-      handleDownload();
-      window.location.reload();
-    }
-  }, [numMoves0, numMoves1]);
+  // useEffect(() => {
+  //   const minMoves = Math.min(numMoves0, numMoves1);
+  //   if (minMoves === 1001 && !hasDownloaded.current) {
+  //     hasDownloaded.current = true;
+  //     handleDownload();
+  //     window.location.reload();
+  //   }
+  // }, [numMoves0, numMoves1]);
 
   // Function to handle the download process
   const handleDownload = () => {
